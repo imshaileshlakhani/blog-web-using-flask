@@ -1,0 +1,17 @@
+{
+  "params":
+  {
+    "local_server": "True",
+    "local_uri": "mysql://root:Shailesh@123@localhost/blogspote",
+    "prod_uri": "mysql://root:Shailesh@123@localhost/blogspotep",
+    "blog_name": "Blog Spote",
+    "username": "slakhani062@rku.ac.in",
+    "pass": "shailesh29",
+    "about_me": "My name is Shailesh Lakhani and i am student at RK University. I like to write blog on different topics. Hope you like my content if that, then please share it",
+    "num_post": 3,
+    "admin_user": "Shailesh294",
+    "admin_pass": "sendypatel@123",
+    "upload_location": "C:\\Users\\Sendy\\PycharmProjects\\blogspote\\static\\img"
+  }
+
+}

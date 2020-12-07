@@ -1,0 +1,69 @@
+{% extends "layoutinflate.html" %}
+{% block body %}
+
+	<style>
+		.tr{
+			line-height:50px;
+		}
+	</style>
+	
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('{{ url_for('static',filename='img/home-bg.jpg') }}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Admin Panel</h1>
+            <span class="subheading">Manage your posts and change them</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+		<h1>Basic Action</h1>
+		<div class="">
+			<a href="/edit/0" class="btn btn-primary">Add a new post</a>
+			<a href="/logout" class="btn btn-primary">Logout</a>
+		</div>
+		<hr>
+		<h1>Upload A file</h1>
+		<form action="/upload" method="post" enctype="multipart/form-data">
+			<input type="file" name="img" id="img">
+			<button class="btn btn-primary">Upload</button>
+		</form>
+		<hr>
+		<h1>Edit Posts</h1>
+		<table class="table">
+			<thead class="text-center">
+			  <tr>
+				<th>Id</th>
+				<th>Title</th>
+				<th>Date</th>
+				<th>Edit</th>
+				<th>Delete</th>
+			  </tr>
+			</thead>
+			{% for post in posts %}
+				<tbody class="text-center">
+				  <tr class="tr">
+					<td>{{post.Id}}</td>
+					<td>{{post.title}}</td><!--{{post.title}}-->
+					<td>{{post.date}}</td>
+					<td><a href="/edit/{{post.Id}}"><button class="btn btn-primary">Edit</button></a></td>
+					<td><a href="/delete/{{post.Id}}"><button class="btn btn-primary">Delete</button></a></td>
+				  </tr>
+				</tbody>
+			{% endfor %}
+		</table>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+
+
