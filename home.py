@@ -5,6 +5,7 @@ import json
 import os
 from flask_mail import Mail
 from werkzeug.utils import secure_filename
+import re
 
 with open('config.json', 'r') as c:
     params = json.load(c)["params"]
